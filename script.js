@@ -35,7 +35,7 @@
     if (phone.replace(/\D/g, '').length < 10) return showError('Please enter a valid phone number.');
 
     // Sends to the Google Apps Script Web App deployed from the Sheet.
-    var WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyvHalCh6k-0iEj_dFdUWQog1Uwo4Xdu2S5-uxuAr1CEvH068q1V4BN2nRyNgUaK6M/exec';
+    var WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxnjxji3ZK6LCeo9Olry3tyb_MlYyeQgQ1zbLz-mju2q8CGWEZaVBTG50ClwZsCfU9p/exec';
 
     function reveal() {
       firstNameEl.textContent = name.split(/\s+/)[0];
