@@ -34,9 +34,8 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('Please enter a valid email address.');
     if (phone.replace(/\D/g, '').length < 10) return showError('Please enter a valid phone number.');
 
-    // Sends to the Google Apps Script Web App you deploy from the Sheet.
-    // Paste your deployment URL below (see README "Connect the waitlist" section).
-    var WAITLIST_ENDPOINT = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+    // Sends to the Google Apps Script Web App deployed from the Sheet.
+    var WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzb7vdj8q5vg8dpKKczk9hItOTWZdz8AHb7nHl-dOfcUgk-WJ5fX5E24hbFN6QyqJ2e/exec';
 
     function reveal() {
       firstNameEl.textContent = name.split(/\s+/)[0];
@@ -44,7 +43,7 @@
       success.hidden = false;
     }
 
-    if (WAITLIST_ENDPOINT.indexOf('https://script.google.com/macros/s/AKfycbzb7vdj8q5vg8dpKKczk9hItOTWZdz8AHb7nHl-dOfcUgk-WJ5fX5E24hbFN6QyqJ2e/exec') === 0) {
+    if (WAITLIST_ENDPOINT.indexOf('PASTE_YOUR') === 0) {
       // Endpoint not configured yet — still show success locally so the form isn't broken.
       reveal();
       return;
