@@ -43,23 +43,20 @@
       success.hidden = false;
     }
 
-    if (WAITLIST_ENDPOINT.indexOf('PASTE_YOUR') === 0) {
-      // Endpoint not configured yet — still show success locally so the form isn't broken.
-      reveal();
-      return;
-    }
-
+    // no-cors mode: the browser sends the request but won't let us read the
+    // response. For a fire-and-forget waitlist write, that's fine - Apps Script
+    // still receives and stores the data.
     fetch(WAITLIST_ENDPOINT, {
       method: 'POST',
-      // text/plain avoids a CORS preflight that Apps Script doesn't handle well.
+      mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ name: name, email: email, phone: phone })
     })
-      .then(reveal)
-      .catch(function () {
-        // Even if the network call fails, don't strand the user — but you can
-        // change this to showError('Something went wrong, please try again.') instead.
+      .then(function () {
         reveal();
+      })
+      .catch(function (err) {
+        showError('DEBUG: ' + (err && err.message ? err.message : err));
       });
   });
 })();
