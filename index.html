@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dhrmik — Coming Soon</title>
+<meta name="description" content="Dhrmik — sacred pooja kits, reimagined for a new generation. Old wisdom. New expression. Join the waitlist." />
+<meta name="theme-color" content="#0B0503" />
+<meta property="og:title" content="Dhrmik — Coming Soon" />
+<meta property="og:description" content="Sacred pooja kits, reimagined for a new generation. Join the waitlist." />
+<meta property="og:image" content="assets/logo.png" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage" id="stage">
+    <div class="bg-image" aria-hidden="true"></div>
+    <div class="bg-scrim" aria-hidden="true"></div>
+    <div class="starfield" aria-hidden="true"></div>
+    <div class="glow-cursor" id="glow" aria-hidden="true"></div>
+    <div class="glow-aura" aria-hidden="true"></div>
+    <div class="frame" aria-hidden="true"></div>
+
+    <div class="content">
+      <p class="eyebrow">Coming Soon</p>
+
+      <img class="logo" src="assets/logo.png" alt="Dhrmik" width="1200" height="311" />
+
+      <div class="rule"></div>
+
+      <p class="tagline">Old wisdom. New expression.</p>
+
+      <p class="lede">Sacred pooja kits, reimagined for a new generation. Devotion drawn from the cosmos itself. To know more, join our waitlist and be the first inside.</p>
+
+      <form class="waitlist" id="waitlist" novalidate>
+        <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+        <input id="email" name="email" type="email" placeholder="Email address" autocomplete="email" inputmode="email" required />
+        <input id="phone" name="phone" type="tel" placeholder="Phone number" autocomplete="tel" inputmode="tel" required />
+        <p class="error" id="error" role="alert" hidden></p>
+        <button type="submit">Join the Waitlist</button>
+        <p class="fineprint">No spam. One message, when we launch.</p>
+      </form>
+
+      <div class="success" id="success" hidden>
+        <p class="success-title">Welcome, <span id="firstName">friend</span>.</p>
+        <p class="success-body">You&rsquo;re on the Dhrmik waitlist. We&rsquo;ll reach out the moment we open.</p>
+      </div>
+
+      <nav class="socials" aria-label="Social links">
+        <a href="#" title="Instagram" aria-label="Instagram">IG</a>
+        <a href="#" title="Facebook" aria-label="Facebook">FB</a>
+        <a href="#" title="Pinterest" aria-label="Pinterest">PN</a>
+        <a href="#" title="TikTok" aria-label="TikTok">TT</a>
+      </nav>
+
+      <p class="copyright">&copy; <span id="year">2026</span> Dhrmik</p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
